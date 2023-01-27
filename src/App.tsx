@@ -4,8 +4,8 @@ import { BrowserRouter, Routes, Route, NavLink } from "react-router-dom";
 import "./App.css";
 import Header from "./Components/Header/Header";
 
-import Home from "./Routes/Home/Home";
 function App() {
+  const Home = React.lazy(() => import("./Routes/Home/Home"));
   const NoPage = React.lazy(() => import("./Routes/NoPage/NoPage"));
   const News = React.lazy(() => import("./Routes/News/News"));
   const Famouses = React.lazy(() => import("./Routes/Famouses/Famouses"));
@@ -14,7 +14,14 @@ function App() {
       <BrowserRouter>
         <Header />
         <Routes>
-          <Route path="/" element={<Home />} />
+          <Route
+            path="/"
+            element={
+              <React.Suspense fallback={<>...</>}>
+                <Home />
+              </React.Suspense>
+            }
+          />
           <Route
             path="/famouses"
             element={

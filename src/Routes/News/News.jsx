@@ -2,7 +2,7 @@ import "./News.scss"
 const News =  () =>{
     return ( 
         <div className="news-container global-container">
-            News Page
+             <h1 className="page-heading news">News Page</h1>
         </div> 
     );
 }

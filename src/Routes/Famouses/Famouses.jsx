@@ -2,7 +2,7 @@ import "./Famouses.scss"
 const Famouses =  () =>{
     return ( 
         <div className="famouses-container global-container">
-            Famouses Page
+            <h1 className="page-heading famouses">Famouses Page</h1>
         </div> 
     );
 }

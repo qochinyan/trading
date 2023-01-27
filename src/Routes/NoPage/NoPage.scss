@@ -1,7 +1,26 @@
-.nopage-container{
-    width: 100vw;
-    padding-top: 140px;
-    font-size: 30px;
+.nopage-container {
+  width: 100vw;
+  //   padding-top: 140px;
+  margin: 0;
+  background-color: #FAFEFF;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  font-size: 30px;
+  font-weight: 600;
+  color: rgba(50, 80, 120, 0.8);
+  .nopage-home-link {
+    text-decoration: none;
     font-weight: 600;
-    color: rgba(50, 80, 120, 0.8);
+    color: rgb(73, 255, 97);
+  }
+}
+.nopage-bottom-text {
+  margin-top: 20px;
+  font-weight: 300;
+  font-size: 27px;
+}
+.page-heading.nopage{
+    margin: -0;
 }

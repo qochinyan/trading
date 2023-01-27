@@ -1,0 +1,51 @@
+.currencies-table {
+  margin: 50px 0 0 0;
+  border-collapse: collapse;
+  a{
+    text-decoration: none;
+    font-weight: 600;
+    width: 100px;
+    height: 30px;
+    border:none; 
+    margin: 0;
+    padding: 0;
+  }
+  a td{color: rgb(255, 152, 18);}
+  * {
+    font-family: "Montserrat", sans-serif;
+  }
+  td:hover,th:hover{
+    background-color: rgba(9, 28, 201, 0.43);
+    color: white;
+    // border: none;
+  }
+  td,
+  th {
+    padding: 20px 40px;
+    border: 1px solid rgba(39, 39, 39, 0.251);
+    color:rgba(57, 57, 57, 0.752);
+  }
+  th:first-child{
+    border-left: none;
+    border-top: none;
+  }
+  th{
+    border-top: none;
+  }
+  th:last-child{
+    border-right: none;
+  }
+  td:first-child{
+    border-left: none;
+  }
+  td:last-child{
+    border-right: none;
+  }
+  tr:last-child td{
+    border-bottom: none;
+  }
+}
+.page-heading {
+  margin: 40px 0 20px 0;
+  color: rgba(29, 135, 255, 0.726);
+}
