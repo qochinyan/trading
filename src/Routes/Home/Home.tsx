@@ -54,7 +54,6 @@ const Main = () => {
   return (
     <>
       {" "}
-      <Loader />
       <div className="home-container global-container">
         <h1 className="page-heading home">Home</h1>
         {/* <h3 className="curr-table-heading">Currencies</h3> */}

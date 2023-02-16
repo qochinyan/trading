@@ -1,6 +1,5 @@
-import React, { useEffect } from "react";
-import { BrowserRouter, Routes, Route, NavLink } from "react-router-dom";
-
+import React from "react";
+import { BrowserRouter, Routes, Route } from "react-router-dom";
 import "./App.css";
 import Header from "../Components/Header/Header";
 import Loader from "../Components/Loader/Loader";
@@ -8,53 +7,55 @@ import { useAppDispatch, useAppSelector } from "../Redux/hooks";
 import { startLoading } from "../Redux/features/settings/settingsSlice";
 
 function App() {
-  const Home = React.lazy(() => import("../Routes/Home/Home"));
-  const NoPage = React.lazy(() => import("../Routes/NoPage/NoPage"));
-  const News = React.lazy(() => import("../Routes/News/News"));
-  const Famouses = React.lazy(() => import("../Routes/Famouses/Famouses"));
+  const Suspense = (React as any).Suspense;
+  const lazy = (React as any).lazy;
+  const Home = lazy(() => import("../Routes/Home/Home"));
+  const NoPage = lazy(() => import("../Routes/NoPage/NoPage"));
+  const News = lazy(() => import("../Routes/News/News"));
+  const Famouses = lazy(() => import("../Routes/Famouses/Famouses"));
   const isLoading = useAppSelector((state) => state.settings.loading);
-  const dispatch = useAppDispatch()
+  const dispatch = useAppDispatch();
   // useEffect(() => {
   // dispatch(startLoading())
-    
+
   // }, [])
-   
+
   return (
     <div className="App">
       <BrowserRouter>
-        <Loader/>
+        <Loader />
         <Header />
         <Routes>
           <Route
             path="/"
             element={
-              <React.Suspense fallback={<></>}>
+              <Suspense fallback={<></>}>
                 <Home />
-              </React.Suspense>
+              </Suspense>
             }
           />
           <Route
             path="/famouses"
             element={
-              <React.Suspense fallback={<></>}>
+              <Suspense fallback={<></>}>
                 <Famouses />
-              </React.Suspense>
+              </Suspense>
             }
           />
           <Route
             path="/news"
             element={
-              <React.Suspense fallback={<></>}>
+              <Suspense fallback={<></>}>
                 <News />
-              </React.Suspense>
+              </Suspense>
             }
           />
           <Route
             path="*"
             element={
-              <React.Suspense fallback={<></>}>
+              <Suspense fallback={<></>}>
                 <NoPage />
-              </React.Suspense>
+              </Suspense>
             }
           />
         </Routes>
