@@ -3,10 +3,12 @@ import { createSlice } from "@reduxjs/toolkit";
 
 export interface sets {
   loading: boolean;
+  connection: boolean;
 }
 
 const initialState: sets = {
   loading: false,
+  connection:true
 };
 
 export const settingsSlice = createSlice({
@@ -20,20 +22,12 @@ export const settingsSlice = createSlice({
     endLoading: (state) => {
       state.loading = false;
     },
+    setConnection: (state,action) => {
+      state.connection =  action.payload.payload
+    },
   },
 });
 
-export const { startLoading,endLoading } = settingsSlice.actions;
-
-// export const selectCount = (state: RootState) => state.counter.value;
-
-// export const incrementIfOdd =
-//   (amount: number): AppThunk =>
-//   (dispatch, getState) => {
-//     const currentValue = selectCount(getState());
-//     if (currentValue % 2 === 1) {
-//       dispatch(incrementByAmount(amount));
-//     }
-//   };
+export const { startLoading, endLoading ,setConnection} = settingsSlice.actions;
 
 export default settingsSlice.reducer;

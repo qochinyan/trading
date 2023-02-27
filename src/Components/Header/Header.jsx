@@ -1,11 +1,11 @@
 import { NavLink } from "react-router-dom";
 
 import logo from "../../Images/logo.png";
-import { startLoading } from "../../Redux/features/settings/settingsSlice";
-import { useAppDispatch } from "../../Redux/hooks";
+// import { startLoading } from "../../Redux/features/settings/settingsSlice";
+// import { useAppDispatch } from "../../Redux/hooks";
 import "./Header.scss";
 const Header = () => {
-  const dispatch = useAppDispatch()
+  // const dispatch = useAppDispatch()
 
   return (
     <div className="header-container global-container">
@@ -21,8 +21,8 @@ const Header = () => {
         <NavLink className="header-link" to="/news">
           News
         </NavLink>
-        <NavLink className="header-link" to="/famouses">
-          Famouses
+        <NavLink className="header-link" to="/converter">
+          Converter
         </NavLink>
       </nav>
     </div>

@@ -1,6 +1,7 @@
 import { useEffect } from "react";
-import { endLoading } from "../../Redux/features/settings/settingsSlice";
+import { endLoading, setConnection } from "../../Redux/features/settings/settingsSlice";
 import { useAppDispatch } from "../../Redux/hooks";
+import { store } from "../../Redux/store";
 import "./News.scss";
 const News = () => {
   interface newsType {
@@ -39,6 +40,7 @@ const News = () => {
   //   dispatch(endLoading())
       
   //   }, [])
+  store.dispatch(setConnection({payload:true}))
   return (
     <div className="news-container global-container">
       <h1 className="page-heading news">News</h1>

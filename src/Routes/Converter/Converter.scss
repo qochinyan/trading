@@ -1,0 +1,96 @@
+* {
+  font-family: "Montserrat";
+}
+.convert-container {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  .page-heading.convert {
+    text-align: center;
+    margin: 0;
+    padding: 0;
+    border: none;
+    font-weight: normal;
+    color: grey;
+    margin: 20px 0;
+  }
+  .converter-container {
+    margin: 40px 0;
+    width: 1100px;
+    border-radius: 3px;
+    max-width: 1200px;
+    background-color: rgb(255, 255, 255);
+    box-shadow: 0px 0px 4px 1px rgba(128, 128, 128, 0.312);
+    padding: 30px 50px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    flex-direction: column;
+    gap: 25px;
+    .converter-top {
+      width: 100%;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 20px;
+      .amount,
+      .from,
+      .to {
+        span {
+          color: rgb(63, 63, 63);
+        }
+        width: 100%;
+        display: flex;
+        flex-direction: column;
+        gap: 5px;
+        align-items: start;
+        justify-content: center;
+        select,
+        input{
+          width: 100%;
+          padding: 13px 40px 13px 16px;
+          border-radius: 4px;
+          border: 1px solid #cbd5e1;
+          -webkit-appearance: none;
+          -moz-appearance: none;
+          appearance: none;
+          outline: none;
+        }
+        select {
+          background-size: 30px;
+          background-repeat: no-repeat;
+          background-position: calc(100% - 3px) center;
+          background-image: url("https://www.skillstep.pt/i/apex_ui/img/ui/select-arrow.svg");
+          cursor: pointer;
+        }
+      }.chanage-currency-icon {
+      margin-top: 22px;
+      width: 50px;
+      cursor: pointer;
+    }
+    }
+    .convert-button {
+      border: 1px solid #cbd5e1;
+      border-radius: 5px;
+      letter-spacing: 3px;
+      background-color: rgb(168, 51, 236);
+      color: white;
+      font-size: 20px;
+      padding: 10px 20px;
+      cursor: pointer;
+      align-self: flex-start;
+    }
+    .total-input{
+        width: 100%;
+          padding: 13px 40px 13px 16px;
+          border-radius: 4px;
+          border: 1px solid #cbd5e1;
+          -webkit-appearance: none;
+          -moz-appearance: none;
+          appearance: none;
+          outline: none;
+    }
+
+  }
+}

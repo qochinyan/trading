@@ -3,7 +3,7 @@ $blue: #26bbf0;
 $green: #c2d5a0;
 $red: #cf6a6d;
 $yellow: #ffbc0d;
-
+  
 $black: #343536;
 $black-2: #424950;
 $grey: #89949b;
@@ -24,7 +24,7 @@ body {
     width: 100%;
     height: 100%;
     text-align: center;
-    z-index: 666666;
+    z-index: 6446;
     &:after {
       content: "";
       display: inline-block;
@@ -53,9 +53,7 @@ body {
   animation:fade 3s linear;
   display: none;
 }
-#particles-background#closed{
-  display: none;
-}
+
 .loader-circle {
   position: absolute;
   left: 50%;
@@ -106,6 +104,25 @@ body {
   background-image: -moz-linear-gradient(45deg, #3f3251 2%, #002025 100%);
   background-image: -webkit-linear-gradient(45deg, #3f3251 2%, #002025 100%);
   background-image: linear-gradient(45deg, #3f3251 2%, #002025 100%);
+}
+// no  connection
+
+.noConnection-loader{
+  color: white;
+  z-index: 111111;
+  font-size: 33px;
+  text-align: center;
+  position: absolute;
+  top:52%;
+  left: 50%;
+  transform: translate(-50%,-50%);
+  display: flex;
+  gap: 230px;
+  align-items: center;justify-content: center;
+  flex-direction: column;
+  img{
+    opacity: .9;
+  }
 }
 @keyframes rotate {
   0% {

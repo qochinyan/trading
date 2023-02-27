@@ -3,6 +3,7 @@ import { BrowserRouter, Routes, Route } from "react-router-dom";
 import "./App.css";
 import Header from "../Components/Header/Header";
 import Loader from "../Components/Loader/Loader";
+// import noConnection from "../Components/noConnection/noConnection";
 import { useAppDispatch, useAppSelector } from "../Redux/hooks";
 import { startLoading } from "../Redux/features/settings/settingsSlice";
 
@@ -12,8 +13,8 @@ function App() {
   const Home = lazy(() => import("../Routes/Home/Home"));
   const NoPage = lazy(() => import("../Routes/NoPage/NoPage"));
   const News = lazy(() => import("../Routes/News/News"));
-  const Famouses = lazy(() => import("../Routes/Famouses/Famouses"));
-  const isLoading = useAppSelector((state) => state.settings.loading);
+  const Converter = lazy(() => import("../Routes/Converter/Converter"));
+  // const isLoading = useAppSelector((state) => state.settings.loading);
   const dispatch = useAppDispatch();
   // useEffect(() => {
   // dispatch(startLoading())
@@ -24,6 +25,7 @@ function App() {
     <div className="App">
       <BrowserRouter>
         <Loader />
+        {/* <noConnection /> */}
         <Header />
         <Routes>
           <Route
@@ -35,10 +37,10 @@ function App() {
             }
           />
           <Route
-            path="/famouses"
+            path="/converter"
             element={
               <Suspense fallback={<></>}>
-                <Famouses />
+                <Converter />
               </Suspense>
             }
           />

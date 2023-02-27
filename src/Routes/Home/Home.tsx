@@ -8,6 +8,7 @@ import { useAppDispatch } from "../../Redux/hooks";
 import {
   startLoading,
   endLoading,
+  setConnection,
 } from "../../Redux/features/settings/settingsSlice";
 import Loader from "../../Components/Loader/Loader";
 
@@ -37,7 +38,8 @@ const Main = () => {
       )
       .then((data: any) => {
         setCurrencies(data.data);
-        dispatch(endLoading());
+        dispatch(endLoading())
+        dispatch(setConnection({payload:true}))
       });
   }, []);
   useEffect(() => {
@@ -49,6 +51,7 @@ const Main = () => {
       )
       .then((data: any) => {
         setCurrencies(data.data);
+        dispatch(setConnection({payload:true}))
       });
   });
   return (
